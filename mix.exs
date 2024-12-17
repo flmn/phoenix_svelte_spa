@@ -50,11 +50,8 @@ defmodule PhoenixSvelteSpa.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "cmd pnpm install --prefix web"],
-      "web.deploy": [
-        "cmd pnpm build --prefix web",
-        "phx.digest"
-      ]
+      setup: ["deps.get", ~s|run -e 'System.cmd("pnpm", ["install"], cd: "web")'|],
+      "web.deploy": [~s|run -e 'System.cmd("pnpm", ["build"], cd: "web")'|]
     ]
   end
 end

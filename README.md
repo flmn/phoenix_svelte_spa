@@ -13,11 +13,8 @@ mix phx.server
 ```elixir
 defp aliases do
   [
-     setup: ["deps.get", "cmd pnpm install --prefix web"],
-	 "web.deploy": [
-	   "cmd pnpm build --prefix web",
-	   "phx.digest"
-	]
+    setup: ["deps.get", ~s|run -e 'System.cmd("pnpm", ["install"], cd: "web")'|],
+    "web.deploy": [~s|run -e 'System.cmd("pnpm", ["build"], cd: "web")'|]
   ]
 end
 ```

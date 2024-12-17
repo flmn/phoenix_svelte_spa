@@ -25,3 +25,5 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 phoenix_svelte_spa-*.tar
 
+# Ignore assets that are produced by build tools.
+/priv/static/

@@ -1,6 +1,11 @@
 defmodule PhoenixSvelteSpaWeb.Router do
   use PhoenixSvelteSpaWeb, :router
 
+  pipeline :browser do
+    plug :accepts, ["html"]
+    plug :put_secure_browser_headers
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -23,5 +28,11 @@ defmodule PhoenixSvelteSpaWeb.Router do
 
       live_dashboard "/dashboard", metrics: PhoenixSvelteSpaWeb.Telemetry
     end
+  end
+
+  scope "/", PhoenixSvelteSpaWeb do
+    pipe_through :browser
+
+    get "/*path", PageController, :index
   end
 end

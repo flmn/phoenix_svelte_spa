@@ -17,7 +17,7 @@ defmodule PhoenixSvelteSpaWeb do
   those modules here.
   """
 
-  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
+  def static_paths, do: ~w(index.html _app favicon.png robots.txt)
 
   def router do
     quote do

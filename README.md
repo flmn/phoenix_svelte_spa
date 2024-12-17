@@ -2,7 +2,7 @@
 
 ## WARN
 
-If you using this repository as template, remember to change **signing_salt** of [@session_options](blob/master/lib/phoenix_svelte_spa_web/endpoint.ex#L10) and [live_view config](blob/master/config/config.exs#L22)!
+If you using this repository as template, remember to change **signing_salt** of [@session_options](lib/phoenix_svelte_spa_web/endpoint.ex#L10) and [live_view config](config/config.exs#L22)!
 
 ## Phoenix
 
